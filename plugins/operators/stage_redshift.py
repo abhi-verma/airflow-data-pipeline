@@ -4,6 +4,18 @@ from airflow.utils.decorators import apply_defaults
 from airflow.contrib.hooks.aws_hook import AwsHook
 
 class StageToRedshiftOperator(BaseOperator):
+    """
+    Loads data in Dimension tables from staging tables
+    
+    :param redshift_conn_id: Redshift Connection Id
+    :param aws_credentials_id: Name of the AWS connection created in Airflow to allow access to S3 bucket
+    :param table: Target table to load data in Redshift cluster
+    :param s3_bucket: S3 bucket name for getting the JSON data
+    :param s3_key: S3 key to get data from inside the bucket
+    :param copy_json_option: JSON format
+    :param region: Region in which the bucket resides
+    """
+    
     ui_color = '#358140'
     
     copy_sql = """

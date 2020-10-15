@@ -3,6 +3,13 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class DataQualityOperator(BaseOperator):
+    """
+    Loads data in Dimension tables from staging tables
+    
+    :param redshift_conn_id: Redshift Connection Id
+    :param test_query: SQL Query to run for the test case
+    :param expected_result: Expected return value for the SQL Query provided
+    """
 
     ui_color = '#89DA59'
 
