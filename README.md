@@ -24,11 +24,12 @@ The data model resembles a star schema with one Fact table, songplays and four d
 - data_quality.py: This file defines the DataQualityOperator used in one of the tasks in DAG. The operator compares the result returned by the user supplied query with the expected_result variable and passes/fails the test case. It should be placed in the plugins>operators directory of the Airflow installation.
 
 ### Project Steps
-1. In a AWS account, create a user with read access to S3 and create a connection in the Airflow UI using the access key id and secret access key.
+1. Configure Airflow and place the project files in the suggested folders.
+2. In a AWS account, create a user with read access to S3 and create a connection in the Airflow UI using the access key id and secret access key.
 ![AWS Credentials connection](img/aws_cred_conn.PNG)
-2. Create a Redshift cluster in AWS and then create a connection in the Airflow UI using the ARN name, database name, user details and port number.
+3. Create a Redshift cluster in AWS and then create a connection in the Airflow UI using the ARN name, database name, user details and port number.
 ![Redshift connection](img/redshift_conn.png)
-3. In the Airflow UI, toggle the DAG switch to ON and the DAG would either start executing on its own based on the schedule provided in the udac_example_dag file or can be initiated manually in the UI.
-4. Go to Graph view to verify the task dependencies as per the intended workflow. ![Graph view](img/graph_view.PNG)
-5. Upon successful completion of the DAG, verify the data in the fact and dimension tables.
-6. DON'T FORGET to delete your cluster if you don't intend to use it later.
+4. In the Airflow UI, toggle the DAG switch to ON and the DAG would either start executing on its own based on the schedule provided in the udac_example_dag file or can be initiated manually in the UI.
+5. Go to Graph view to verify the task dependencies as per the intended workflow. ![Graph view](img/graph_view.PNG)
+6. Upon successful completion of the DAG, verify the data in the fact and dimension tables.
+7. DON'T FORGET to delete your cluster if you don't intend to use it later.
