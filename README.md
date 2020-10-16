@@ -25,9 +25,9 @@ The data model resembles a star schema with one Fact table, songplays and four d
 
 ### Project Steps
 1. In a AWS account, create a user with read access to S3 and create a connection in the Airflow UI using the access key id and secret access key.
-![AWS Credentials connection](img/aws_cred_conn.png)
+![AWS Credentials connection](img/aws_cred_conn.PNG)
 2. Create a Redshift cluster in AWS and then create a connection in the Airflow UI using the ARN name, database name, user details and port number.
-![Redshift connection](img/redshift_conn.png)
+![Redshift connection](img/redshift_conn.PNG)
 3. In the Airflow UI, toggle the DAG switch to ON and the DAG would either start executing on its own based on the schedule provided in the udac_example_dag file or can be initiated manually in the UI.
 4. Go to Graph view to verify the task dependencies as per the intended workflow. ![Graph view](img/graph_view.png)
 5. Upon successful completion of the DAG, verify the data in the fact and dimension tables.
